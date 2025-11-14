@@ -19,8 +19,52 @@
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+html,body {
+  height: 100%;
 }
+
+nav{
+  display: none;
+  width: 80%;
+  margin: 0 auto;
+  height: 100px;
+  background-color: black;
+  color: #ffffff;
+}
+
+/* ######### 
+BANNER COMPONENT FOR LANDING PAGE
+############### */
+#banner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+#banner::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+
+  mask-image: url('/inkanimation.gif');
+  mask-size: cover;
+  mask-position: center;
+}
+
+/* re-apply the the gif animation triggered by useffect */
+#banner.animate-background-mask::before{
+  mask-image: url('/inkanimation.gif');
+}
+
+.title{
+  color: #fff;
+  font-size: 72px;
+}
+
+/* ###################### */
