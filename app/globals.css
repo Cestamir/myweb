@@ -18,6 +18,9 @@
     --foreground: #ededed;
   }
 }
+/* #########
+GENERAL STYLES
+########### */
 
 html,body {
   height: 100%;
@@ -31,6 +34,64 @@ nav{
   background-color: black;
   color: #ffffff;
 }
+
+.page{
+  display: flex;
+  justify-content: center;
+  align-items:flex-start;
+  height: 100vh;
+  position: relative;
+}
+
+/* ###########
+PORTAL IMAGE PAGE
+########### */
+.portalimage{
+  position: relative;
+  top: -100px;
+}
+
+.auto-rotate{
+  animation: autoRotateAnimation;
+  animation-timeline: view();
+}
+
+@keyframes autoRotateAnimation{
+  from{
+    transform: scale(1) rotate(0deg);
+  } to{
+    transform: scale(1.4) rotate(180deg);
+    opacity: 90%;
+  }
+}
+/* ################# */
+
+
+/* #########
+ANIMATED TITLE ON THE BANNER
+############## */
+
+.title svg path{
+  fill: transparent;
+  stroke: #fff;
+  stroke-width: 0.1;
+  stroke-dasharray: 60;
+  stroke-dashoffset: 60;
+  animation: textTitleAnimation 4s ease-in-out 1 forwards;
+}
+
+@keyframes textTitleAnimation{
+  0%{
+    stroke-dasharray: 60;
+  } 80%{
+    fill: transparent;
+  } 100%{
+    fill: #fff;
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ################# */
 
 /* ######### 
 BANNER COMPONENT FOR LANDING PAGE
