@@ -35,6 +35,15 @@ nav{
   color: #ffffff;
 }
 
+.headline{
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 4rem;
+  letter-spacing: 3px;
+  text-decoration:underline;
+  height: 100%;
+}
+
 .page{
   display: flex;
   justify-content: center;
@@ -42,6 +51,74 @@ nav{
   height: 100vh;
   position: relative;
 }
+
+/* ################ */
+
+.title-grid{
+  display: grid;
+  gap: 30px;
+}
+
+.auto-blur{
+  animation: autoBlurAnimation linear both;
+  animation-timeline: view();
+}
+
+@keyframes autoBlurAnimation{
+  0%{
+    filter: blur(40px)
+  } 45%,55%{
+    filter: blur(0px);
+  } 100%{
+    filter: blur(40px);
+  }
+}
+
+/* ###########
+CONTENT PAGE 
+############### */
+.auto-show{
+  animation: autoShowAnimation both;
+  animation-timeline: view(70% 5%);
+}
+
+@keyframes autoShowAnimation{
+  from{
+    opacity: 0;
+    transform: translateY(200px) scale(0.3);
+  }to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.text-content{
+  display: block;
+  width: 100%;
+  height: 400px;
+}
+
+.column-page{
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+}
+
+.grid-content{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: repeat(4,auto);
+  gap: 20px;
+  width: 100%;
+}
+
+@media(max-width:768px){
+  .grid-content{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+}
+/* ################# */
 
 /* ###########
 PORTAL IMAGE PAGE
@@ -60,7 +137,7 @@ PORTAL IMAGE PAGE
   from{
     transform: scale(1) rotate(0deg);
   } to{
-    transform: scale(1.4) rotate(180deg);
+    transform: scale(4.4) rotate(180deg);
     opacity: 90%;
   }
 }
