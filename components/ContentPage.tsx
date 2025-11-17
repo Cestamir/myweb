@@ -3,45 +3,40 @@ import React from 'react'
 interface ContentPageProps{
     firstArticle: string;
     secondArticle:string;
+    thirdArticle:string;
     headline:string;
 }
 
-const ContentPage = ({firstArticle,secondArticle,headline} : ContentPageProps) => {
+const ContentPage = ({firstArticle,secondArticle,thirdArticle,headline} : ContentPageProps) => {
   return (
     <div className='page column-page'>
         <h2 className='auto-show headline'>{headline}</h2>
         <div className='grid-content'>
-            <div>
-                none
-            </div>
+            <figure className='auto-show'>
+                <img className='content-image' src={'/spaceship.webp'}/>
+            </figure>
             <div className='auto-show text-content'>
-                <figure>
-                    <img src={'/next.svg'}/>
-                </figure>
+                <h3 className='small-headline'>Speed</h3>
                 <p>
                     {firstArticle}
                 </p>
             </div>
             <div className='auto-show text-content '>
-                <figure>
-                    <img src={'/next.svg'}/>
-                </figure>
+                <h3 className='small-headline'>Time</h3>
                 <p>
                     {secondArticle}
                 </p>
             </div>
-            <div>
-                none
-            </div>
-            <div>
-                none
-            </div>
+            <figure className='auto-show'>
+                <img className='content-image' src={'/atomclock.webp'}/>
+            </figure>
+            <figure className='auto-show'>
+                <img className='content-image' src={'/money.webp'}/>
+            </figure>
             <div className='auto-show text-content'>
-                <figure>
-                    <img src={'/next.svg'}/>
-                </figure>
+                <h3   className='small-headline'>Money</h3>
                 <p>
-                    {firstArticle}
+                    {thirdArticle}
                 </p>
             </div>
         </div>
