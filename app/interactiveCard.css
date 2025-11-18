@@ -1,0 +1,121 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+.interactive-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1000px;
+}
+
+/* Name */
+.name, .copyright, .title {
+  margin: 0;
+  color: #212121;
+  transition: color 0.6s;
+}
+
+.copy-wrap {
+  display: inline-block;
+  transition: transform 0.6s ease;
+}
+
+@keyframes partytime {
+  0% { background-position: 83% 0%; }
+  50% { background-position: 18% 100%; }
+  100% { background-position: 83% 0%; }
+}
+
+/* Card */
+.card {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+  width: 70%;
+  height: 70%;
+  background: transparent;
+  transform: scale(0.9);
+  transition: 
+    transform 0.9s cubic-bezier(0.215, 0.61, 0.355, 1),
+    filter 0.9s,
+    box-shadow 0.9s,
+    opacity 0.9s;
+  position: relative;
+  z-index: 3;
+  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.25);
+  filter: grayscale(100%);
+  opacity: 0.85;
+}
+
+/* Image */
+.card-img {
+  position: absolute;
+  inset: 0;
+  background-image: url('/clocksteam.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+/* Title */
+.card-title-wrap {
+  position: relative;
+  z-index: 3;
+  margin-top: 40px;
+}
+
+.btn {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: greenyellow;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn-image{
+    border-radius: 50%;
+}
+
+/* OPEN STATE */
+.interactive-wrapper.is-open .name,
+.interactive-wrapper.is-open .title {
+  color: white;
+}
+
+.interactive-wrapper.is-open .copy-wrap {
+  transform: translateY(-100%);
+}
+
+.interactive-wrapper.is-open .card {
+    background-image: url('/spiral.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.interactive-wrapper.is-open .card {
+  transform: scale(1) !important;
+  box-shadow: none;
+  filter: grayscale(0);
+  opacity: 1;
+}

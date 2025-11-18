@@ -12,7 +12,7 @@ const ContentPage = ({firstArticle,secondArticle,thirdArticle,headline} : Conten
     <div className='page column-page'>
         <h2 className='auto-show headline'>{headline}</h2>
         <div className='grid-content'>
-            <figure className='auto-show'>
+            <figure className='auto-show img-container'>
                 <img className='content-image' src={'/spaceship.webp'}/>
             </figure>
             <div className='auto-show text-content'>
@@ -27,10 +27,10 @@ const ContentPage = ({firstArticle,secondArticle,thirdArticle,headline} : Conten
                     {secondArticle}
                 </p>
             </div>
-            <figure className='auto-show'>
-                <img className='content-image' src={'/atomclock.webp'}/>
+            <figure className='auto-show img-container'>
+                <img className='content-image' src={'/clocksteam.png'}/>
             </figure>
-            <figure className='auto-show'>
+            <figure className='auto-show img-container'>
                 <img className='content-image' src={'/money.webp'}/>
             </figure>
             <div className='auto-show text-content'>
