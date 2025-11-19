@@ -1,9 +1,19 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import InteractiveCard from './InteractiveCard'
 
 const PortalPage = () => {
+
+    const [portalClicked,setPortalClicked] = useState<boolean>(false);
+
+    const handleCardClick = (isOpen: boolean) => {
+        setPortalClicked(isOpen)
+    }
+
+    const backgroundImageStyle = {backgroundImage: 'url("./spiral.jpg")',backgroundSize: "cover"};
+
   return (
-    <div className='page portal-page'>
+    <div style={portalClicked ?backgroundImageStyle : {}} className='page portal-page'>
         <img className='portalimage auto-rotate' width={"200px"} height={"200px"} src={'/portalvoid-removebg-preview.png'}/>
         {/* <div className='portal-content'>
             <h1 className="name">
@@ -34,7 +44,7 @@ const PortalPage = () => {
             </span>
             </h2>
         </div> */}
-        <InteractiveCard/>
+        <InteractiveCard isTheCardClicked={handleCardClick}/>
     </div>
   )
 }

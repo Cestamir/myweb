@@ -2,7 +2,11 @@
 import { useState, useRef, useEffect } from "react";
 import "../app/interactiveCard.css";
 
-export default function InteractiveCard() {
+interface InteractiveCardProps {
+    isTheCardClicked: (isOpen:boolean) => void;
+}
+
+export default function InteractiveCard({isTheCardClicked} : InteractiveCardProps) {
   const [open, setOpen] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -42,6 +46,10 @@ export default function InteractiveCard() {
     };
   }, [open]);
 
+  useEffect(() => {
+    isTheCardClicked(open);
+  },[open,isTheCardClicked])
+
   // Toggle open state
   const toggleOpen = () => {
     setOpen((prev) => !prev);
@@ -62,7 +70,6 @@ export default function InteractiveCard() {
           <h1 className="title">
             <span className="copy-wrap">Portal</span>
           </h1>
-          <button className="btn">{open ? "X" : "O"}</button>
         </div>
 
         <div className="card-img"></div>
